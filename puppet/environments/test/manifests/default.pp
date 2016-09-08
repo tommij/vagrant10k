@@ -7,13 +7,12 @@ class defaults {
   class { "default_packages": 
     stage => "second"
   }
-  class { "stupid_apt_update": 
-    stage => "first"
-  }
-  #debug
-  file { "/tmp/default": 
-    ensure => present,
-    content => "foo"
+  #package mangement
+  class { 'apt':
+    stage => first,
+    update => {
+    frequency => 'daily',
+    },
   }
 }
 
@@ -32,6 +31,3 @@ class default_packages {
   }
 }
 
-class stupid_apt_update {
-  exec { "/usr/bin/apt-get update": } 
-}

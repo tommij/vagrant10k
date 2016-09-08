@@ -1,5 +1,8 @@
 node "puppetmaster" {
   include defaults 
+
+
+
   $git_admin_user = "admin_tlj"
   $git_public_key = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEsiludoo1Y/ihcY/GpgcjHxVacm8uMQMlfxM7IiHXn15k1bVkwhQVmkBGiq23qgtyrMdKbWQYdAGdtA3OPBL6w= tommi@blackgronk"
 
@@ -25,7 +28,12 @@ node "puppetmaster" {
   }
   package { ["default-jre", "puppetserver"]: 
     ensure => present,
-    notify => Exec["setup-r10k"]
+    notify => [ File["/tmp/${git_admin_user}.pub"] ]
+   # notify => [ Exec["setup-r10k"], File["/tmp/${git_admin_user}.pub"] ]
+  }
+  file { "/usr/local/bin/gem": 
+    ensure => link,
+    target => "/opt/puppetlabs/puppet/bin/gem"
   }
   #yes, I know it's fugly, have nowhere apparant to store it.
   file { "unsecure-puppet-pem": 
@@ -56,11 +64,10 @@ node "puppetmaster" {
     group => root,
     require => File['/opt/puppetlabs/r10k']
   }
-  exec { "setup-r10k":
-    command => "/opt/puppetlabs/puppet/bin/gem install r10k",
-    creates => "/opt/puppetlabs/puppet/bin/r10k",
-    refreshonly => true,
-    require => [ File['/opt/puppetlabs/r10k/cache/'] ] 
+  package { "r10k": 
+    ensure => latest,
+    provider => gem,
+    require => [ File['/opt/puppetlabs/r10k/cache/'], File['/usr/local/bin/gem'] ] 
   }
 #  file { "
 
