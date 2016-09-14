@@ -1,0 +1,16 @@
+{
+  "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+  "templates/sudoers.erb": "afafc6cf738b9603c3b563d6e1e99ebc",
+  "manifests/init.pp": "30f015c5415bc511995c6a245759828e",
+  "templates/setup.sh.erb": "20330376cf9f6508a5b25bb5b236d1ae",
+  "manifests/hooks.pp": "66f1f21ae3629a90bb689af5778c64dd",
+  "templates/functions.erb": "7f1a72d87cfd3a685a780c712a830e28",
+  "templates/r10k_env.sh.erb": "f05e572c299520b0f41d39eaad8c31ed",
+  "metadata.json": "27fc299e0112300ee160022d464ce63f",
+  "files/post-receive-commitnumbers": "ba68551f72d3b63e1c248b903968343a",
+  "README": "cb1b1228aafd07922dc05fc7c9c750cd",
+  "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+  "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+  "templates/post-receive.erb": "ad8d3fe27d7f4218be36759126cb83d3",
+  "tests/init.pp": "378f64329fbc9ca2ea5147fa0b306b43"
+}
