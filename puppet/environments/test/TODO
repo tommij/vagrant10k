@@ -1,0 +1,7 @@
+puppet autosign. (trivial)
+mcollective / autosign / push mcollective hook after r10k (moderate)
+hiera POC model 
+hiera.yaml-per-environment?
+move /etc/defaults/puppetserver inline content -> localvagrantpuppet/files/ (trivial/cleanup)
+move most puppetmaster.pp -> localvagrantpuppet module (cleanup)
+Possibly change to Puppetfile for contrib modules? - meh, likely not worth the effort
