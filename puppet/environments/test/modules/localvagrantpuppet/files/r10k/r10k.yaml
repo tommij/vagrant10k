@@ -28,7 +28,7 @@ sources:
     # The 'remote' setting determines the location of the VCS repository used
     # for creating environments.
     #remote: 'git@github.com:my-org/org-operations-modules'
-    remote: 'git@localhost:puppetmaster.git'
+    remote: 'git@localhost:localpuppet.git'
 
     # The 'basedir' setting specifies where environments will be created for
     # this source. This setting should match the Puppet 'environmentpath'
