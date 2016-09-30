@@ -1,13 +1,17 @@
 Requirements:
-[link](https://www.vagrantup.com/downloads.html "Vagrant - >= 1.8.5")
-[link](https://www.virtualbox.org/wiki/Downloads "oracle virtualbox")
+[Vagrant => 1.8.5](https://www.vagrantup.com/downloads.html "Vagrant - >= 1.8.5")
+
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads "oracle virtualbox")
+
   Run `vboxmanage hostonlyif ipconfig vboxnet0 --ip 33.33.33.1` - to set up internal IP networking
+
   (33.33.33.0/24 is a DoD never routed segment, used to avoid LAN conflicts for host-only-interfacing)
   
 Run `vagrant up` in this directory
 
 
 pending "puppet" node creation:
+
   `ssh git@33.33.33.200` - to get a list of repositories you have access to on the gitserver.
 
 ~~~
@@ -25,10 +29,15 @@ Connection to 33.33.33.200 closed.
 
 
 gitolite-admin is the git-server configuration - yes, the git-server is controlled via git. 
+
   Syntax should be fairly self-explanatory.
+
   See conf/gitolite.conf for general, simplistic config  
+
   users are defined by a public key named ${username}.pub
+
   *Your username is always git!* (the user mapping is done by the forced ssh script - see git->admin_tlj user mapping in the example above)
+
 
 The "localpuppet" repository is the location of the puppet manifest the "puppet" node runs on.
 It uses a hook trigger r10k builds for a specific branch each time it is pushed:
