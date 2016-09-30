@@ -160,5 +160,18 @@ Automatic triggering of puppet run is not built into this PoC, but is easily adm
 
 Note that for now, the environment is defined in the Vagrantfile as a parameter (--environment testing)
 
+*Technical notes:*
+
+"gitolite_admin_skel" Skeleton gitolite-admin repo - establish users and triggers on the freshly installed gitserver
+
+"localpuppet" PoC r10k/librarian manifest to toy around with.
+
+"vagrant10k" (this) repository role:
+
+  Build the puppet node, setup puppetserver, git-server and contains Vagrant rules.
+
+  Pulls "gitolite_admin_skel" a skeleton gitolite-admin repository and pushes it to the gitserver.  (establish config for the gitserver)
+
+  Pulls "localpuppet" off github and pushes it to the puppetserver's gitserver (establish a startup repository with functional code on the gitserver)
 
 Have fnu!
