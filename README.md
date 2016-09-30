@@ -1,4 +1,5 @@
 Requirements:
+
 [Vagrant => 1.8.5](https://www.vagrantup.com/downloads.html "Vagrant - >= 1.8.5")
 
 [VirtualBox](https://www.virtualbox.org/wiki/Downloads "oracle virtualbox")
@@ -71,6 +72,7 @@ tommi@blackgronk:~/what-is-this-vagrant-thingy/localpuppet$ ls
 ~~~ 
 
 How come it's empty?
+
 It has no master branch, which is the default in git, hence the "remote HEAD refers to nonexistent ref, unable to checkout."  - warning.
 
 seeing as we want a branch -> environment mapping, and we have no "master" environment..........
